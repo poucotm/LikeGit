@@ -1,0 +1,32 @@
+[
+	{
+		"caption": "Preferences",
+		"mnemonic": "n",
+		"id": "preferences",
+		"children":
+		[
+			{
+				"caption": "Package Settings",
+				"mnemonic": "P",
+				"id": "package-settings",
+				"children":
+				[
+					{
+						"caption": "LikeGit",
+						"children":
+						[
+							{
+								"caption": "Settings",
+								"command": "edit_settings",
+								"args": {
+									"base_file": "${packages}/LikeGit/LikeGit.sublime-settings",
+									"default": "// Specify your own settings. You don't need to restart\n{\n\n}\n"
+								}
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+]

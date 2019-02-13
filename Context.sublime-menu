@@ -1,0 +1,18 @@
+[
+	{ "caption": "-", "id": "LikeGit" },
+	{
+		"caption": "❤ Git",
+		"children": [
+			{ "command": "like_git_graph", "args": {"target":"all"}, "caption": "Graph" },
+			{ "command": "like_git_graph", "args": {"target":"file"}, "caption": "Graph - View" },
+			{ "command": "like_git_commit", "caption": "Commit" },
+			{ "command": "like_git_checkout", "caption": "Check out" },
+			{ "command": "like_git_diff", "args": {"target":"all"}, "caption": "Diff (E)" },
+			{ "command": "like_git_diff", "args": {"target":"stash"}, "caption": "Diff Stash (E)" },
+			// { "command": "like_git", "caption": "Merge" },
+			// { "command": "like_git", "caption": "Rebase" },
+			// { "command": "like_git", "caption": "Rebase -i" },
+			// { "command": "like_git", "caption": "Reset" },
+		]
+	}
+]

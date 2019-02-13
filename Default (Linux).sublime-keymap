@@ -1,0 +1,6 @@
+[
+	{ "keys": ["super+g", "g"], "command": "like_git_graph", "args": {"target":"all"} },
+	{ "keys": ["super+g", "f"], "command": "like_git_graph", "args": {"target":"file"} },
+	{ "keys": ["super+g", "d"], "command": "like_git_diff" },
+	{ "keys": ["super+g", "c"], "command": "like_git_checkout" },
+]

@@ -1,0 +1,7 @@
+{
+	// default 'LikeGit - Graph' view width
+	"width": 0.3,
+
+	// maximally displayed commits
+	"max_commits": 100
+}
