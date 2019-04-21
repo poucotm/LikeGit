@@ -1,4 +1,4 @@
-# -*- coding: utf8 -*-
+# -*- coding: utf-8 -*-
 # -----------------------------------------------------------------------------
 # Author : yongchan jeon (Kris) poucotm@gmail.com
 # File   : LikeGit.py
@@ -19,7 +19,7 @@ try:
     # import
     from .core import commands
     from .core import process
-    from .core.commands import (LikeGitGraph, LikeGitDrawGraph, LikeGitCheckout, LikeGitDiff, LikeGitListener)
+    from .core.commands import (LikeGitGraph, LikeGitDrawGraph, LikeGitCheckout, LikeGitDiff, LikeGitBash, LikeGitListener)
     import_ok = True
 except Exception:
     print ('LIKEGIT : ERROR _____________________________________________')

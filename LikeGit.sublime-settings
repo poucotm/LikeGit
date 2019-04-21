@@ -3,5 +3,12 @@
 	"width": 0.3,
 
 	// maximally displayed commits
-	"max_commits": 100
+	"max_commits": 100,
+
+	// launch git-bash terminal
+	"git-bash": {
+		"windows" : "git-bash",
+		"osx" : "osx/terminal.sh",
+		"linux" : "gnome-terminal"
+	}
 }

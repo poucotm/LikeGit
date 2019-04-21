@@ -1,6 +1,6 @@
 [
-	{ "keys": ["super+g", "g"], "command": "like_git_graph", "args": {"target":"all"} },
-	{ "keys": ["super+g", "f"], "command": "like_git_graph", "args": {"target":"file"} },
-	{ "keys": ["super+g", "d"], "command": "like_git_diff" },
-	{ "keys": ["super+g", "c"], "command": "like_git_checkout" },
+	{ "keys": ["alt+g", "g"], "command": "like_git_graph", "args": {"target":"all"} },
+	{ "keys": ["alt+g", "f"], "command": "like_git_graph", "args": {"target":"file"} },
+	{ "keys": ["alt+g", "d"], "command": "like_git_diff" },
+	{ "keys": ["alt+g", "c"], "command": "like_git_checkout" },
 ]
