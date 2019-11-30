@@ -283,7 +283,13 @@ def apply_bgcolor():
             themo = themo.replace('#theme_selborder', sbclr)
             asbgc = set_ansi_bgcolor(bgclr)
             themo = themo.replace('#ansi_bgcolor', asbgc)
-            fname = os.path.join(sublime.packages_path(), 'LikeGit/theme/LikeGit.tmTheme')
+            fpath = os.path.join(sublime.packages_path(), 'User')
+            if not os.path.exists(fpath):
+                os.makedirs(fpath)
+            fpath = os.path.join(sublime.packages_path(), 'User', 'LikeGit')
+            if not os.path.exists(fpath):
+                os.makedirs(fpath)
+            fname = os.path.join(sublime.packages_path(), 'User', 'LikeGit', 'LikeGit.tmTheme')
             with open(fname, "w", newline="") as f:
                 f.write(themo)
             return
@@ -397,7 +403,7 @@ class LikeGitGraph(sublime_plugin.TextCommand):
             graphv.settings().set('likegitcmd', self.cmds)
             graphv.set_scratch(True)
             graphv.settings().set("draw_white_space", "none")
-            graphv.settings().set('color_scheme', 'Packages/LikeGit/theme/LikeGit.tmTheme')
+            graphv.settings().set('color_scheme', 'Packages/User/LikeGit/LikeGit.tmTheme')
             if len(msgs) >= 2:
                 graphv.run_command("like_git_draw_graph", {"args": {'graph': msgs[0], 'status': msgs[1]}})
             elif len(msgs) >= 1:
