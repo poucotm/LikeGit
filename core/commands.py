@@ -236,8 +236,9 @@ def apply_bgcolor():
     try:
         prefs = sublime.load_settings("Preferences.sublime-settings")
         cschm = prefs.get('color_scheme')
+        fname = os.path.join(sublime.packages_path(), 'User', 'LikeGit', 'LikeGit.tmTheme')
         global LASTCOLORSCH
-        if LASTCOLORSCH == cschm:
+        if os.path.exists(fname) and LASTCOLORSCH == cschm:
             return
 
         LASTCOLORSCH = cschm
@@ -283,9 +284,6 @@ def apply_bgcolor():
             themo = themo.replace('#theme_selborder', sbclr)
             asbgc = set_ansi_bgcolor(bgclr)
             themo = themo.replace('#ansi_bgcolor', asbgc)
-            fpath = os.path.join(sublime.packages_path(), 'User')
-            if not os.path.exists(fpath):
-                os.makedirs(fpath)
             fpath = os.path.join(sublime.packages_path(), 'User', 'LikeGit')
             if not os.path.exists(fpath):
                 os.makedirs(fpath)
@@ -392,6 +390,7 @@ class LikeGitGraph(sublime_plugin.TextCommand):
                 vl[0].run_command("like_git_draw_graph", {"args": {'graph': msgs[0], 'status': ''}})
         else:
             create_graph_group()
+            apply_bgcolor()
             graphv = sublime.active_window().new_file()
             graphv.set_name(LIKEGITGRAPH)
             graphv.settings().set('word_wrap', False)
