@@ -426,6 +426,13 @@ class LikeGitDrawGraph(sublime_plugin.TextCommand):
         # graph
         graph = args['graph']
         graph = title + graph
+
+        lg_prefs = get_setting()
+        debug = lg_prefs.get('debug', False)
+        if debug:
+            graph = re.sub(r'\t', '<tab>', graph)
+            print (graph)
+
         gregn, graph = ansi_coloring(graph)
         graph = graph.replace('*', u'◉')
 
