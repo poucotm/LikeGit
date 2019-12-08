@@ -366,9 +366,11 @@ class LikeGitGraph(sublime_plugin.TextCommand):
                 max_cnts = '-' + str(lg_prefs.get('max_commits', 1000))
                 self.cmds = []
                 if args['target'] == 'all':
-                    self.cmds.append(['git', self.git_dir, self.work_tree, 'log', '--graph', '--full-history', '--color', '--all', '--pretty=format:%x09%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s', max_cnts])
+                    # self.cmds.append(['git', self.git_dir, self.work_tree, 'log', '--graph', '--full-history', '--color', '--all', '--pretty=format:%x09%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s', max_cnts])
+                    self.cmds.append(['git', self.git_dir, self.work_tree, 'log', '--graph', '--full-history', '--color', '--all', '--pretty=format:%x20%x20%x20%x1b[31m%h%x20%x20%x20%x1b[32m%d%x1b[0m%x20%s', max_cnts])
                 else:
-                    self.cmds.append(['git', self.git_dir, self.work_tree, 'log', '--graph', '--full-history', '--color', '--all', '--pretty=format:%x09%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s', max_cnts, '--', file_rpath])
+                    # self.cmds.append(['git', self.git_dir, self.work_tree, 'log', '--graph', '--full-history', '--color', '--all', '--pretty=format:%x09%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s', max_cnts, '--', file_rpath])
+                    self.cmds.append(['git', self.git_dir, self.work_tree, 'log', '--graph', '--full-history', '--color', '--all', '--pretty=format:%x20%x20%x20%x1b[31m%h%x20%x20%x20%x1b[32m%d%x1b[0m%x20%s', max_cnts, '--', file_rpath])
                 self.cmds.append(['git', self.git_dir, self.work_tree, 'status'])
                 git_proc(self.cmds, self.on_git_graph)
         return
