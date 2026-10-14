@@ -11,6 +11,7 @@
 import sublime, sublime_plugin
 import re
 import os
+import plistlib
 import sys
 import traceback
 import time
